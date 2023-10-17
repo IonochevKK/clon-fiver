@@ -16,7 +16,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const currentUIser = {
+  const currentUser = {
     id: 1,
     username: "Ionochev Kostya",
     isSeller: true,
@@ -35,18 +35,18 @@ const Navbar = () => {
           <span>Explore</span>
           <span>English</span>
           <span>Sign in</span>
-          {!currentUIser?.isSeller && <span>Become a Seller</span>}
-          {!currentUIser && <button>Join</button>}
-          {currentUIser && (
+          {!currentUser?.isSeller && <span>Become a Seller</span>}
+          {!currentUser && <button>Join</button>}
+          {currentUser && (
             <div className="user" onClick={() => setopen(!open)}>
               <img
                 src="https://cdn.pixabay.com/photo/2023/09/19/12/34/dog-8262506_1280.jpg"
                 alt=""
               />
-              <span>{currentUIser?.username}</span>
+              <span>{currentUser?.username}</span>
               {open && (
                 <div className="options">
-                  {currentUIser?.isSeller && (
+                  {currentUser?.isSeller && (
                     <>
                       <Link to="/mygigs" className="link">
                         Gigs
@@ -103,6 +103,7 @@ const Navbar = () => {
               Lifestyle
             </Link>
           </div>
+          <hr />
         </>
       )}
     </div>
